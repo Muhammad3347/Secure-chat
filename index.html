@@ -495,6 +495,10 @@
             <h2>🔐 Rahul's chat server</h2>
             <p>Connect to a secure chat server</p>
 <input type="text" id="serverInput" class="input" placeholder="Enter server URL (ws://ip:8765/ws)" value="ws://127.0.0.1:8765/ws">
+            <div style="margin: 8px 0 0; font-size: 12px; color: var(--muted);">
+                or use a Rahul's server : 
+                <a href="#" onclick="insertDemoUrl(); return false;" aria-label="Use Rahul's demo server">https://secure-chat-1-vvo6.onrender.com</a>
+            </div>
             <div class="modal-buttons">
                 <button class="test-btn" onclick="testConnection()">Test Connection</button>
                 <button class="connect-btn" onclick="connectToServer()" id="connectModalBtn">Connect to Server</button>
@@ -607,6 +611,17 @@
                 if (!url.pathname || url.pathname === '/') { url.pathname = '/ws'; }
                 return url.toString();
             } catch { return u; }
+        }
+
+        function insertDemoUrl() {
+            try {
+                const input = document.getElementById('serverInput');
+                if (!input) return;
+                input.value = 'https://secure-chat-1-vvo6.onrender.com';
+                input.focus();
+                input.select();
+                updateConnectionStatus('Demo URL inserted. Click Test Connection or Connect.', 'info');
+            } catch {}
         }
 
         async function testConnection() {
