@@ -1,4 +1,5 @@
 # Encypted Secure Chat
+<img width="3838" height="1851" alt="image" src="https://github.com/user-attachments/assets/16c4270c-72ed-4887-9491-6ddbbea6c376" />
 
 A lightweight, privacy-focused real-time chat application that implements end-to-end encryption using OpenPGP standards. Built with security and user privacy as core principles, this application ensures that your conversations remain completely private and secure.
 
